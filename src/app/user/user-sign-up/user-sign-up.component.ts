@@ -2,8 +2,6 @@ import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angu
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../user.service';
 import { Cliente } from '../../cliente/cliente';
-import { Vendedor } from '../../vendedores/vendedor';
-import { VendedoresService } from '../../vendedores/vendedores.service';
 
 @Component({
     selector: 'app-user-sign-up',
@@ -20,11 +18,9 @@ export class UserSignUpComponent implements OnInit {
     constructor(
         private userService: UserService,
         private toastrService: ToastrService,
-        private vendedorService:VendedoresService
         ) { }
 
     user: Cliente;
-    user2:Vendedor;
     @Output() create = new EventEmitter();
 
     /**
@@ -36,11 +32,6 @@ export class UserSignUpComponent implements OnInit {
         this.userService.signUp(this.user).subscribe((user) => {
             this.user = user;
             this.create.emit();
-            this.vendedorService.createVendedor(this.user2).subscribe((user2) => {
-            this.user2 = user2;
-            this.create.emit();
-            this.toastrService.success("The vendedor was created", "vendedor creation");
-        });
           this.toastrService.success("The cliente was created", "cliente creation");
         }, err => {
             this.toastrService.error(err, "Error");
@@ -52,7 +43,6 @@ export class UserSignUpComponent implements OnInit {
     * This function will initialize the component
     */
     ngOnInit() {
-        this.user2=new Vendedor();
         this.user = new Cliente();
     }
 

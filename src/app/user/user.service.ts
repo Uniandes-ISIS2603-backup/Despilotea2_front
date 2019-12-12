@@ -16,13 +16,15 @@ const clientes = '/clientes';
 @Injectable()
 export class UserService {
 
+    private administrador: Administrador;
+     private cliente: Cliente
     /**
      * Constructor of the service
      * @param router Angular's Router to redirect the user on login or logout
      * @param roleService NgxRolesService to manage authentication roles
      * @param permissionsService NgxPermissionsService to manage authentication permissions
      */
-    constructor(private administrador: Administrador, private cliente: Cliente, private clienteService: ClienteService, private router: Router, private roleService: NgxRolesService, private permissionsService: NgxPermissionsService, private http: HttpClient) { }
+    constructor( private clienteService: ClienteService, private router: Router, private roleService: NgxRolesService, private permissionsService: NgxPermissionsService, private http: HttpClient) { }
 
     start(): void {
         this.permissionsService.flushPermissions();
@@ -33,9 +35,7 @@ export class UserService {
             this.setGuestRole();
         } else if (role === 'ADMIN') {
             this.setAdministratorRole();
-        } else if (role === 'VEND') {
-            this.setAdministratorRole();
-        }
+        } 
         else {
             this.setClientRole();
         }
@@ -62,12 +62,6 @@ export class UserService {
         localStorage.setItem('role', 'ADMIN');
     }
 
-    setVendedorRole(): void {
-        this.roleService.flushRoles();
-        this.roleService.addRole('VEND', ['edit_author_permission', 'delete_author_permission']);
-        localStorage.setItem('role', 'VEND');
-    }
-
     printRole(): void {
         console.log(this.roleService.getRoles());
     }
@@ -85,7 +79,7 @@ export class UserService {
             
                 this.setClientRole()
             }
-        this.router.navigateByUrl('/dispositivos/all');
+        this.router.navigateByUrl('/books');
     }
 
     /**

@@ -1,70 +1,67 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {NgxPaginationModule} from 'ngx-pagination';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {ToastrModule} from 'ngx-toastr';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
-import {NgxPermissionsModule} from 'ngx-permissions';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxPermissionsModule } from 'ngx-permissions';
 import { ModalDialogModule } from 'ngx-modal-dialog';
-import {TarjetaModule} from './tarjeta/tarjeta.module';
-import {AppComponent} from './app.component';   
-import {AdministradorModule} from './administrador/administrador.module';
-import {AppRoutingModule} from './app-routing/app-routing.module';
-import {AuthModule} from './auth/auth.module';
-import {FacturaModule} from './factura/factura.module';
-import {TipoComidaModule} from './tipo-comida/tipo-comida.module';
-import { ClienteModule } from './cliente/cliente.module';
-import { ReservaModule } from './reserva/reserva.module';
-import {RestauranteModule} from './Restaurante/restaurante.module';
-import {ResenaModule} from './resena/resena.module';
-import { HomeModule } from './home/home.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home/home.component';
+import { AuhtorComponent } from './author/auhtor.component';
+import { BookComponent } from './book/book.component';
+import { OrganizationComponent } from './organization/organization.component';
+import { PrizeComponent } from './prize/prize.component';
+import { ReviewComponent } from './review/review.component';
 import { FooterComponent } from './main/footer/footer.component';
 import { NavBarComponent } from './main/nav-bar/nav-bar.component';
-
+import { UserModule } from './user/user.module';
+import { ClienteModule } from './cliente/cliente.module';
+import { NotFoundModule } from './notFound/notFound.module';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { NotFoundComponent } from './notFound/notFound/notfound.component';
+import { BookListComponent } from './book/book-list/book-list.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        FooterComponent,
-        NavBarComponent,
-    ],
-    imports: [
-        BrowserModule,
-        RestauranteModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        ModalDialogModule.forRoot(),
-        AdministradorModule,
-        FacturaModule,
-        TipoComidaModule,
-        AuthModule,
-        TarjetaModule,
-        ResenaModule,
-        RestauranteModule,
-        HomeModule,
-        FormsModule,
-        ToastrModule.forRoot({
-            timeOut: 10000,
-            positionClass: 'toast-bottom-right',
-            preventDuplicates: true,
-        }),
-        NgxPaginationModule,
-        NgxPermissionsModule.forRoot(),
-        NgbModule,
-        ClienteModule,
-        ReservaModule
-    ],
-    bootstrap: [AppComponent],
-    providers: [
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: HttpErrorInterceptor,
-            multi: true
-        }
-    ]
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AuhtorComponent,
+    BookComponent,
+    BookListComponent,
+    OrganizationComponent,
+    PrizeComponent,
+    ReviewComponent,
+    FooterComponent,
+    NavBarComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    UserModule,
+    HttpClientModule,
+    ClienteModule,
+    NotFoundModule,
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ModalDialogModule.forRoot(),
+    ReactiveFormsModule,
+    FormsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
+    NgxPaginationModule,
+    NgxPermissionsModule.forRoot(),
+    NgbModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -8,9 +8,8 @@ import { UserSignUpComponent } from '../user/user-sign-up/user-sign-up.component
 import { ClienteListComponent } from '../cliente/cliente-list/cliente-list.component';
 import { NotFoundComponent } from '../notFound/notFound/notfound.component';
 import { BookListComponent } from '../book/book-list/book-list.component';
-import { AuhtorComponent } from '../auhtor/auhtor.component';
-import { EditorialComponent } from '../editorial/editorial.component';
-import { HomeComponent } from '../home/home.component';
+import { AuhtorComponent } from '../author/auhtor.component';
+import { HomeComponent } from '../home/home/home.component';
 
 const routes: Routes = [
     {
@@ -54,10 +53,6 @@ const routes: Routes = [
     {
         path: 'authors',
         component: AuhtorComponent
-    },
-    {
-        path:'editorials',
-        component:EditorialComponent
     },
     {
         path:'home',

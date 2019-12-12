@@ -6,36 +6,32 @@
         <form name="sign-up" (ngSubmit)="f.form.valid && signUp()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="usuario"><b>Usuario</b></label>
-                <input type="text" name="usuario" class="form-control" id="usuario" [(ngModel)]="user.usuario"  [(ngModel)]="user2.usuario" required>
+                <input type="text" name="usuario" class="form-control" id="usuario" [(ngModel)]="user.usuario" required>
             </div>
             <div class="form-group">
                 <label for="contrasena"><b>Contraseña</b></label>
-                <input type="text" name="contrasena" class="form-control" id="contrasena" [(ngModel)]="user.contrasena" [(ngModel)]="user2.contrasena" required>
+                <input type="text" name="contrasena" class="form-control" id="contrasena" [(ngModel)]="user.contrasena" required>
             </div>
             <div>
                 <div class="form-group">
                     <label for="correoElectronico"><b>Correo electrónico</b></label>
-                    <input type="text" name="correoElectronico" class="form-control" id="correoElectronico" [(ngModel)]="user.correoElectronico" [(ngModel)]="user2.correoElectronico" required>
+                    <input type="text" name="correoElectronico" class="form-control" id="correoElectronico" [(ngModel)]="user.correoElectronico" required>
                 </div>
                 <div class="form-group">
                     <label for="nombre"><b>Nombre(s)</b></label>
-                    <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="user.nombre" [(ngModel)]="user2.nombre" required>
+                    <input type="text" name="nombre" class="form-control" id="nombre" [(ngModel)]="user.nombre" required>
                 </div>
                 <div class="form-group">
                     <label for="apellidos"><b>Apellidos</b></label>
-                    <input type="text" name="apellido" class="form-control" id="apellido" [(ngModel)]="user.apellido" [(ngModel)]="user2.apellido" required>
+                    <input type="text" name="apellido" class="form-control" id="apellido" [(ngModel)]="user.apellido" required>
                 </div>
                 <div class="form-group">
                     <label for="cedula"><b>Cédula</b></label>
-                    <input type="text" name="cedula" class="form-control" id="cedula" [(ngModel)]="user.cedula" [(ngModel)]="user2.cedula" required>
+                    <input type="text" name="cedula" class="form-control" id="cedula" [(ngModel)]="user.cedula" required>
                 </div>
                 <div class="form-group">
                         <label for="direccion"><b>Dirección</b></label>
                         <input type="text" name="direccion" class="form-control" id="direccion" [(ngModel)]="user.direccion" required>
-                </div>
-                <div class="form-group">
-                        <label for="celular"><b>Celular</b></label>
-                        <input type="text" name="celular" class="form-control" id="celular" [(ngModel)]="user2.celular" required>
                 </div>
             </div>
             <div class="justify-content-center align-self-center buttonHolder">
