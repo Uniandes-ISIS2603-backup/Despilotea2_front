@@ -23,6 +23,8 @@ import {ResenaModule} from './resena/resena.module';
 import { HomeModule } from './home/home.module';
 import { FooterComponent } from './main/footer/footer.component';
 import { NavBarComponent } from './main/nav-bar/nav-bar.component';
+import { EditorialListComponent } from './editorial/editorial-list/editorial-list.component';
+import { EditorialDetailComponent } from './editorial/editorial-detail/editorial-detail.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { NavBarComponent } from './main/nav-bar/nav-bar.component';
         AppComponent,
         FooterComponent,
         NavBarComponent,
+        EditorialListComponent,
+        EditorialDetailComponent,
     ],
     imports: [
         BrowserModule,
