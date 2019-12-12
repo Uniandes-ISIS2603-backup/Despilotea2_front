@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import 'rxjs/add/operator/filter';
 
 
-import {Book} from '../../book/book';
+import {Book} from '../book';
 import {BookService} from '../../book/book.service';
 @Component({
     selector: 'app-book-list',

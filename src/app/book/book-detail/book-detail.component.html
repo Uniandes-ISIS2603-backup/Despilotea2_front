@@ -1,2 +1,24 @@
+<div class="panel-body">
+    <div class="border margin center">
+        <p class="h3 p-3">{{bookDetail.name}}<p> 
+        <div class="row">
+            <div class="col-md-3 center">
+                <div class="thumb">
+                    <img class="img-fluid" src='{{bookDetail.image}}' alt="{{bookDetail.image}}" />   
+                </div>
+            </div>
+            <div class="col">
+                <dl>     
+                    <dt>ISBN: </dt> <dd>{{bookDetail.isbn}}</dd>
+                    <dt>Descripción: </dt>
+                    <dd>{{bookDetail.description}}</dd>
+                    <dt>Fecha de publicación: </dt>
+                    <dd>{{bookDetail.publishDate}}</dd>
+                </dl>
+            </div>
 
-<h1>kjsbjnsalcnklws</h1>
+        </div>
+    </div>
+    <p class="h3 p-3">Comentarios: </p>
+    <app-book-list [books]="bookDetail.reviews"></app-book-list>
+</div>

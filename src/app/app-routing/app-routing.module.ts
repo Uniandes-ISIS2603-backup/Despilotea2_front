@@ -7,6 +7,7 @@ import { UserSignUpComponent } from '../user/user-sign-up/user-sign-up.component
 import { ClienteListComponent } from '../cliente/cliente-list/cliente-list.component';
 import { NotFoundComponent } from '../notFound/notFound/notfound.component';
 import { BookListComponent } from '../book/book-list/book-list.component';
+import { BookDetailComponent } from '../book/book-detail/book-detail.component';
 import { AuhtorComponent } from '../author/auhtor.component';
 import { AuthorListComponent } from '../author/author-list/author-list.component';
 import { AuthorDetailComponent } from '../author/author-detail/author-detail.component';
@@ -51,7 +52,7 @@ const routes: Routes = [
             },
             {
                 path: ':id',
-                component: AuthorDetailComponent,
+                component: BookDetailComponent,
                 runGuardsAndResolvers: 'always'
             }
         ]
