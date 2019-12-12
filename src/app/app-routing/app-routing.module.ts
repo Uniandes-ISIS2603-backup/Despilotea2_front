@@ -12,11 +12,11 @@ import {AuthorListComponent} from '../author/author-list/author-list.component';
 import {AuthorDetailComponent} from '../author/author-detail/author-detail.component';
 
 import { HomeComponent } from '../home/home/home.component';
+import { EditorialListComponent } from '../editorial/editorial-list/editorial-list.component';
 
 
 const routes: Routes = [
-
-   
+ 
     {
         path: 'user',
         children: [
@@ -44,7 +44,7 @@ const routes: Routes = [
     },
     {
         path: 'books',
-        component: BookListComponent
+        component: BookListComponent,
     },
     {
         path: 'authors',
@@ -72,6 +72,10 @@ const routes: Routes = [
     {
         path: '**',
         component: NotFoundComponent,
+    },
+    {
+        path:'editorials',
+        component:EditorialListComponent
     }
 ];
 

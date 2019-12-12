@@ -87,5 +87,3 @@ export class EditorialListComponent implements OnInit {
         this.getEditorials();
     }
 }
-
-

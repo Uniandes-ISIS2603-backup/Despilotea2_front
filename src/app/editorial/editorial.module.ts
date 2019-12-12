@@ -20,8 +20,10 @@ import {EditorialEditComponent} from './editorial-edit/editorial-edit.component'
         NgxPermissionsModule,
         CommonModule,
         FormsModule,
+        BooksModule,
     ],
     declarations: [EditorialListComponent, EditorialDetailComponent, EditorialCreateComponent, EditorialEditComponent],
-    providers: [EditorialService]
+    providers: [EditorialService],
+    exports: [EditorialListComponent, EditorialDetailComponent, EditorialCreateComponent, EditorialEditComponent]
 })
 export class EditorialModule {}

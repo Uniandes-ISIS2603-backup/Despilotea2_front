@@ -27,6 +27,7 @@ import { BookListComponent } from './book/book-list/book-list.component';
 import {AuthorListComponent} from './author/author-list/author-list.component';
 import {AuthorDetailComponent} from './author/author-detail/author-detail.component';
 import { HomeModule } from './home/home.module';
+import { EditorialModule } from './editorial/editorial.module';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { HomeModule } from './home/home.module';
     BrowserAnimationsModule,
     ModalDialogModule.forRoot(),
     ReactiveFormsModule,
+    EditorialModule,
     FormsModule,
     ToastrModule.forRoot({
       timeOut: 10000,

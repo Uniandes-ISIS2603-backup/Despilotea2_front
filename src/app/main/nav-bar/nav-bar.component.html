@@ -27,8 +27,10 @@
     </ul>
 
     <button type="button" class="btn btn-outline-dark mr-3">Ver carrito</button>
-    <button type="button" class="btn btn-outline-dark mr-3" href='/login'>Inicia sesión</button>
-    <button type="button" class="btn btn-outline-dark" href='/signup'>Crear cuenta</button>
+    <a routerLink="user/login">
+      <button type="button" class="btn btn-outline-dark mr-3">Inicia sesión</button>
+    </a>
+    <button type="button" class="btn btn-outline-dark" href="#" routerLink='user/signup'>Crear cuenta</button>
 
     <div *ngxPermissionsOnly="['CLIENT']">
       <button type="button" class="btn btn-outline-dark mr-3" (click)=getUserInformation()>Ver carrito compras</button>
