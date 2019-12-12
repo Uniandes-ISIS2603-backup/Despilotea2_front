@@ -30,7 +30,7 @@ export class AuthorListComponent implements OnInit {
     /**
     * The list of authors which belong to the BookStore
     */
-    @Input() authors: Author[];
+     authors: Author[];
 
     /**
     * The id of the author that the user wants to view

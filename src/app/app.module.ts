@@ -28,6 +28,7 @@ import { HomeModule } from './home/home.module';
 import { EditorialModule } from './editorial/editorial.module';
 import { AuthorModule } from './author/author.module';
 import { CarritoComponent } from './carrito/carrito.component';
+import { ReviewcreateComponent } from './review/reviewcreate/reviewcreate.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CarritoComponent } from './carrito/carrito.component';
     FooterComponent,
     NavBarComponent,
     CarritoComponent,
+    ReviewcreateComponent,
   ],
   imports: [
     BrowserModule,
