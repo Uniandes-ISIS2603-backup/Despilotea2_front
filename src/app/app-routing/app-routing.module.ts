@@ -31,7 +31,10 @@ import {ResenaCreateComponent} from '../resena/resena-create/resena-create.compo
 import { HomeComponent } from '../home/home/home.component';
 import { AdministradorDetailComponent } from '../administrador/administrador-detail/administrador-detail.component';
 
+
 const routes: Routes = [
+
+   
     {
         path: 'tarjetas',
         children: [{
