@@ -8,7 +8,7 @@ import { BookDetail}  from './book-detail';
 
 import {environment} from '../../environments/environment';
 const API_URL = environment.apiURL;
-const books = '/books/list';
+const books = '/books';
 
 
 /**
