@@ -25,12 +25,16 @@ import { NotFoundModule } from './notFound/notFound.module';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { NotFoundComponent } from './notFound/notFound/notfound.component';
 import { BookListComponent } from './book/book-list/book-list.component';
+import {AuthorListComponent} from './author/author-list/author-list.component';
+import {AuthorDetailComponent} from './author/author-detail/author-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AuhtorComponent,
+    AuthorDetailComponent,
+    AuthorListComponent,
     BookComponent,
     BookListComponent,
     OrganizationComponent,

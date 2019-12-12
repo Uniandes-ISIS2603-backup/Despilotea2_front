@@ -8,6 +8,8 @@ import { ClienteListComponent } from '../cliente/cliente-list/cliente-list.compo
 import { NotFoundComponent } from '../notFound/notFound/notfound.component';
 import { BookListComponent } from '../book/book-list/book-list.component';
 import { AuhtorComponent } from '../author/auhtor.component';
+import {AuthorListComponent} from '../author/author-list/author-list.component';
+import {AuthorDetailComponent} from '../author/author-detail/author-detail.component';
 
 import { HomeComponent } from '../home/home/home.component';
 
@@ -55,7 +57,17 @@ const routes: Routes = [
     },
     {
         path: 'authors',
-        component: AuhtorComponent
+        children: [
+            {
+                path: 'list',
+                component: AuthorListComponent
+            },
+            {
+                path: ':id',
+                component: AuthorDetailComponent,
+                runGuardsAndResolvers: 'always'
+            }
+        ]
     },
     {
         path:'home',
