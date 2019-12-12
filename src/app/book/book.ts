@@ -1,4 +1,4 @@
-import { Editorial } from '../editorial;
+import { Editorial } from '../editorial/editorial';
 
 export class Book {
     /**
