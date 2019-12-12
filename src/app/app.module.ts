@@ -26,13 +26,11 @@ import {AuthorListComponent} from './author/author-list/author-list.component';
 import {AuthorDetailComponent} from './author/author-detail/author-detail.component';
 import { HomeModule } from './home/home.module';
 import { EditorialModule } from './editorial/editorial.module';
+import { AuthorModule } from './author/author.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuhtorComponent,
-    AuthorDetailComponent,
-    AuthorListComponent,
     OrganizationComponent,
     PrizeComponent,
     ReviewComponent,
@@ -41,6 +39,7 @@ import { EditorialModule } from './editorial/editorial.module';
   ],
   imports: [
     BrowserModule,
+    AuthorModule,
     AppRoutingModule,
     UserModule,
     HttpClientModule,
