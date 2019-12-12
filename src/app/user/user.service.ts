@@ -36,7 +36,7 @@ export class UserService {
         } else if (role === 'ADMIN') {
             this.setAdministratorRole();
         } 
-        else {
+        else if (role==='CLIENT'){
             this.setClientRole();
         }
     }
