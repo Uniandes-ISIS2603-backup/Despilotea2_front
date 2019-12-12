@@ -4,7 +4,6 @@ import {ToastrService} from 'ngx-toastr';
 
 import {ClienteService} from '../cliente.service';
 import {Cliente} from '../cliente';
-import {ClienteDetail} from '../cliente-detail';
 
 /**
 * The cliente's list component
@@ -66,8 +65,6 @@ export class ClienteListComponent implements OnInit {
         this.showEdit = false;
         this.showView = true;
         this.cliente_id = cliente_id;
-        this.selectedCliente = new ClienteDetail();
-        this.getClienteDetail();
     }
 
     /**
@@ -88,8 +85,6 @@ export class ClienteListComponent implements OnInit {
             this.showCreate = false;
             this.showEdit = true;
             this.cliente_id = cliente_id;
-            this.selectedCliente = new ClienteDetail();
-            this.getClienteDetail();
         }
         else {
             this.showEdit = false;
@@ -104,13 +99,6 @@ export class ClienteListComponent implements OnInit {
         this.clienteService.getClientes()
             .subscribe(clientes => {
                 this.clientes = clientes;
-            });
-    }
-
-    getClienteDetail(): void {
-        this.clienteService.getClienteDetail(this.cliente_id)
-            .subscribe(selectedCliente => {
-                this.selectedCliente = selectedCliente
             });
     }
 
