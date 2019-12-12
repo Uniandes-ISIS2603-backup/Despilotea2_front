@@ -56,10 +56,18 @@ export class UserService {
         return this.http.post<Cliente>(API_URL + clientes, cliente);
     }
 
+    getCliente(clienteId): Observable<Cliente> {
+        return this.http.get<Cliente>(API_URL + clientes+'/'+clienteId);
+    }
+
     setAdministratorRole(): void {
         this.roleService.flushRoles();
         this.roleService.addRole('ADMIN', ['edit_author_permission', 'delete_author_permission']);
         localStorage.setItem('role', 'ADMIN');
+    }
+
+    put(cliente):void{
+        this.http.put<Cliente>(API_URL+clientes,cliente);
     }
 
     printRole(): void {
@@ -79,7 +87,7 @@ export class UserService {
             
                 this.setClientRole()
             }
-        this.router.navigateByUrl('/books');
+        this.router.navigateByUrl('/books/list');
     }
 
     /**

@@ -26,17 +26,19 @@
       </li>
     </ul>
 
+    <a href="carrito">
     <button type="button" *ngxPermissionsOnly="['GUEST']" class="btn btn-outline-dark mr-3">Ver carrito</button>
-
+  </a>
     <a href="user/login">
       <button type="button" *ngxPermissionsOnly="['GUEST']" class="btn btn-outline-dark mr-3">Inicia sesión</button>
     </a>
     <a href="user/signup">
       <button type="button"*ngxPermissionsOnly="['GUEST']" class="btn btn-outline-dark">Crear cuenta</button>
     </a>
-    
+    <a href="carrito">
     <button type="button" class="btn btn-outline-dark mr-3" (click)=getUserInformation()
       *ngxPermissionsOnly="['CLIENT']">Ver carrito compras</button>
+    </a>
     <button type="button" class="btn btn-outline-dark mr-3" (click)=getUserInformation()
       *ngxPermissionsOnly="['CLIENT']">Mi cuenta</button>
     <button type="button" class="btn btn-outline-dark mr-3" (click)=logout() *ngxPermissionsOnly="['CLIENT']">Cerrar

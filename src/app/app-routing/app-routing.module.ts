@@ -14,6 +14,7 @@ import { AuthorDetailComponent } from '../author/author-detail/author-detail.com
 
 import { HomeComponent } from '../home/home/home.component';
 import { EditorialListComponent } from '../editorial/editorial-list/editorial-list.component';
+import { CarritoComponent } from '../carrito/carrito.component';
 
 
 const routes: Routes = [
@@ -56,6 +57,10 @@ const routes: Routes = [
                 runGuardsAndResolvers: 'always'
             }
         ]
+    },
+    {
+        path:'carrito',
+        component:CarritoComponent
     },
     {
         path: 'authors',

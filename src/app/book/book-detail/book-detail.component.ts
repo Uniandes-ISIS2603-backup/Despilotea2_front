@@ -25,7 +25,9 @@ bookId: number;
     private bookService: BookService
   ) { }
 
-
+addCarrito(idBook):void{
+  this.bookService.addCarrito(idBook);
+}
 
   /**
   * El metodo que obtiene el detalle de la ficha tecnica que queremos mostrar

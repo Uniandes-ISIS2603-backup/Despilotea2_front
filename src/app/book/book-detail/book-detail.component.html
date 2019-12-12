@@ -12,7 +12,7 @@
                     <dt>ISBN: </dt> <dd>{{bookDetail.isbn}}</dd>
                     <dt>Descripción: </dt>
                     <dd>{{bookDetail.description}}</dd>
-                    <a href = "" class="btn btn-secondary" >Añadir al carrito</a>
+                    <a class="btn btn-secondary"  (onclick)="addCarrito(bookDetail.id)">Añadir al carrito</a>
                     <div class="row">
                             <div class="col">
                                 <br>

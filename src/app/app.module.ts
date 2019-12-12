@@ -27,6 +27,7 @@ import {AuthorDetailComponent} from './author/author-detail/author-detail.compon
 import { HomeModule } from './home/home.module';
 import { EditorialModule } from './editorial/editorial.module';
 import { AuthorModule } from './author/author.module';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AuthorModule } from './author/author.module';
     ReviewComponent,
     FooterComponent,
     NavBarComponent,
+    CarritoComponent,
   ],
   imports: [
     BrowserModule,
