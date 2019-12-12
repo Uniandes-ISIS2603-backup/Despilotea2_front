@@ -19,6 +19,7 @@ import { ReviewComponent } from './review/review.component';
 import { FooterComponent } from './main/footer/footer.component';
 import { NavBarComponent } from './main/nav-bar/nav-bar.component';
 import { UserModule } from './user/user.module';
+import { BookModule } from './book/book.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { NotFoundModule } from './notFound/notFound.module';
 import { UserLoginComponent } from './user/user-login/user-login.component';
@@ -48,6 +49,7 @@ import { HomeModule } from './home/home.module';
     UserModule,
     HttpClientModule,
     ClienteModule,
+    BookModule,
     NotFoundModule,
     BrowserModule,
     AppRoutingModule,
