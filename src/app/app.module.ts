@@ -21,11 +21,15 @@ import { ReservaModule } from './reserva/reserva.module';
 import {RestauranteModule} from './Restaurante/restaurante.module';
 import {ResenaModule} from './resena/resena.module';
 import { HomeModule } from './home/home.module';
+import { FooterComponent } from './main/footer/footer.component';
+import { NavBarComponent } from './main/nav-bar/nav-bar.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
+        FooterComponent,
+        NavBarComponent,
     ],
     imports: [
         BrowserModule,
