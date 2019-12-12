@@ -8,7 +8,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxPermissionsModule} from 'ngx-permissions';
 import { NotFoundComponent } from './notFound/notfound.component';
 
-
 @NgModule({
     imports: [
         BrowserModule,

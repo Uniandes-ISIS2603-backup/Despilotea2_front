@@ -7,6 +7,10 @@ import { UserLoginComponent } from '../user/user-login/user-login.component';
 import { UserSignUpComponent } from '../user/user-sign-up/user-sign-up.component';
 import { ClienteListComponent } from '../cliente/cliente-list/cliente-list.component';
 import { NotFoundComponent } from '../notFound/notFound/notfound.component';
+import { BookListComponent } from '../book/book-list/book-list.component';
+import { AuhtorComponent } from '../auhtor/auhtor.component';
+import { EditorialComponent } from '../editorial/editorial.component';
+import { HomeComponent } from '../home/home.component';
 
 const routes: Routes = [
     {
@@ -34,8 +38,31 @@ const routes: Routes = [
             },
         ]
     },
-      {path: '', redirectTo: 'home',pathMatch: 'full'},
-      { path: '**', component: NotFoundComponent }
+    {
+        path: 'books',
+        component: BookListComponent
+    },
+    {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+    },
+    {
+        path: '**',
+        component: NotFoundComponent
+    },
+    {
+        path: 'authors',
+        component: AuhtorComponent
+    },
+    {
+        path:'editorials',
+        component:EditorialComponent
+    },
+    {
+        path:'home',
+        component:HomeComponent
+    }
 ];
 
 @NgModule({
