@@ -1,10 +1,11 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {Component, OnInit, ViewContainerRef, Input} from '@angular/core';
 import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import {ToastrService} from 'ngx-toastr';
 
 import {AuthorService} from '../author.service';
 import {Author} from '../author';
 import {AuthorDetail} from '../author-detail';
+import { ActivatedRoute } from '@angular/router';
 
 /**
 * The author's list component
@@ -23,14 +24,13 @@ export class AuthorListComponent implements OnInit {
     */
     constructor(
         private authorService: AuthorService,
-        private modalDialogService: ModalDialogService,
-        private viewRef: ViewContainerRef,
-        private toastrService: ToastrService) {}
+        private route: ActivatedRoute
+        ) {}
 
     /**
     * The list of authors which belong to the BookStore
     */
-    authors: Author[];
+    @Input() authors: Author[];
 
     /**
     * The id of the author that the user wants to view
@@ -120,9 +120,6 @@ export class AuthorListComponent implements OnInit {
     * This method will be called when the component is created
     */
     ngOnInit() {
-        this.showCreate = false;
-        this.showView = false;
-        this.showEdit = false;
         this.selectedAuthor = undefined;
         this.author_id = undefined;
         this.getAuthors();
