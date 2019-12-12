@@ -11,6 +11,7 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
 import {EditorialDetailComponent} from './editorial-detail/editorial-detail.component';
 import {EditorialCreateComponent} from './editorial-create/editorial-create.component';
 import {EditorialEditComponent} from './editorial-edit/editorial-edit.component';
+import { BookModule } from '../book/book.module';
 
 @NgModule({
     imports: [
@@ -20,7 +21,7 @@ import {EditorialEditComponent} from './editorial-edit/editorial-edit.component'
         NgxPermissionsModule,
         CommonModule,
         FormsModule,
-        BooksModule,
+        BookModule,
     ],
     declarations: [EditorialListComponent, EditorialDetailComponent, EditorialCreateComponent, EditorialEditComponent],
     providers: [EditorialService],

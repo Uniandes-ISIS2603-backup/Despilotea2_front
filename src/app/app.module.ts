@@ -36,8 +36,6 @@ import { EditorialModule } from './editorial/editorial.module';
     AuhtorComponent,
     AuthorDetailComponent,
     AuthorListComponent,
-    BookComponent,
-    BookListComponent,
     OrganizationComponent,
     PrizeComponent,
     ReviewComponent,
