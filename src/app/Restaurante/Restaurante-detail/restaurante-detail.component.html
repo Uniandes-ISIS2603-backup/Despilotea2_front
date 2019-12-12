@@ -1,0 +1,113 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">    
+  </head>
+  <body>      
+    <div class="container-fluid">      
+      <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-6 px-0" id="img">
+          <h1 class="display-4 font-italic" id="Intro">{{restauranteDetail.nombre}}</h1>
+          <h2 class="display-4 font-italic" >{{restauranteDetail.tipoRestaurante}}</h2>
+          <div class="lead my-3" id="infoRest">
+              <p>Dirección: {{restauranteDetail.direccion}}</p>
+              <p>Horario: {{restauranteDetail.horario}}</p>
+              <p>Costo Reserva: {{restauranteDetail.costoReserva}}</p>
+              <p>Precio Por Persona: {{restauranteDetail.precioPorPersona}}</p>
+          </div>          
+        </div>
+      </div>
+      <div class="row mb-2">        
+        <div class="col-md-6">
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            
+            <div class="col p-4 d-flex flex-column position-static">
+              <h3 class="mb-0">Nuestros Platos</h3>
+              <button type="button" class="btn" [ngClass]="{ 'btn-primary': platoListComponent.isCollapsed,'btn-outline-primary':!platoListComponent.isCollapsed}" (click)="togglePlatos()">
+                Platos
+              </button>
+              <button type="button" class="btn" [ngClass]="{ 'btn-primary': platoAgregarComponent.isCollapsed,'btn-outline-primary':!platoAgregarComponent.isCollapsed}" (click)="toggleCreatePlato()">
+                Crear un plato
+              </button>
+            <app-restaurante-plato [restaurantePlatos] = "restauranteDetail.platos" [restaurante] = "restauranteDetail"></app-restaurante-plato> 
+            <app-restaurante-agregar-plato [restaurante] = "restauranteDetail" (updatePlatos) = "updatePlatos()"></app-restaurante-agregar-plato>  
+
+            </div>          
+          </div>
+        </div>
+        <div class="col-md-6">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">Nuestros Beneficios</h3>
+              <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>                                 
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>
+                          Descuento Cumpleaños
+                      </td>
+                      <td>
+                          {{restauranteDetail.descuentoCumpleanos}}
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          Zona De Fumadores
+                      </td>
+                      <td>
+                          {{restauranteDetail.zonaDeFumadores}}
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          Pet Friendly
+                      </td>
+                      <td>
+                          {{restauranteDetail.petFriendly}}
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          Servicio A La Mesa
+                      </td>
+                      <td>
+                          {{restauranteDetail.servicioALaMesa}}
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          Música En Vivo
+                      </td>
+                      <td>
+                          {{restauranteDetail.musicaEnVivo}}
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                        <a class="btn btn-primary" (click)='toggleReservar()' *ngxPermissionsOnly="['CLIENT']">Reservar</a>
+                        <div *ngIf="reservar">
+                            <app-reserva-create [restaurante] = "restauranteDetail" [cliente] = "clienteDetail"></app-reserva-create>
+                        </div>  
+                      </td>
+                      <td>
+                          <a href="#" class="btn btn-danger" (click)="deleteThis()" routerLink="/restaurantes/list">Eliminar</a>
+                      </td>
+                    </tr>
+              </tbody>
+            </table>   
+          </div>                 
+        </div>
+      </div>  
+        
+    </div>
+    <div class="row mb-2">  
+      <div class="map_wrapper">
+          <div #map style='width:100%;height:400px;position: absolute;'></div>        
+      </div> 
+  </div> 
+    </div>
+  </body>
