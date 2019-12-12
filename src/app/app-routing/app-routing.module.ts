@@ -47,15 +47,6 @@ const routes: Routes = [
         component: BookListComponent
     },
     {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-    },
-    {
-        path: '**',
-        component: NotFoundComponent
-    },
-    {
         path: 'authors',
         children: [
             {
@@ -72,6 +63,15 @@ const routes: Routes = [
     {
         path:'home',
         component:HomeComponent
+    },
+    {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+    },
+    {
+        path: '**',
+        component: NotFoundComponent,
     }
 ];
 

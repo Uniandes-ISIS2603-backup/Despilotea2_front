@@ -11,7 +11,6 @@ import { NgxPermissionsModule } from 'ngx-permissions';
 import { ModalDialogModule } from 'ngx-modal-dialog';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home/home.component';
 import { AuhtorComponent } from './author/auhtor.component';
 import { BookComponent } from './book/book.component';
 import { OrganizationComponent } from './organization/organization.component';
@@ -27,11 +26,11 @@ import { NotFoundComponent } from './notFound/notFound/notfound.component';
 import { BookListComponent } from './book/book-list/book-list.component';
 import {AuthorListComponent} from './author/author-list/author-list.component';
 import {AuthorDetailComponent} from './author/author-detail/author-detail.component';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     AuhtorComponent,
     AuthorDetailComponent,
     AuthorListComponent,
@@ -64,42 +63,10 @@ import {AuthorDetailComponent} from './author/author-detail/author-detail.compon
     }),
     NgxPaginationModule,
     NgxPermissionsModule.forRoot(),
-    NgbModule
+    NgbModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
-
-
-@NgModule({
-    declarations: [
-        AppComponent,
-        FooterComponent,
-        NavBarComponent
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        ModalDialogModule.forRoot(),
-        FormsModule,
-        ToastrModule.forRoot({
-            timeOut: 10000,
-            positionClass: 'toast-bottom-right',
-            preventDuplicates: true,
-        }),
-        NgxPaginationModule,
-        NgxPermissionsModule.forRoot(),
-        NgbModule,
-        ClienteModule,
-    ],
-    bootstrap: [AppComponent],
-    providers: [
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: HttpErrorInterceptor,
-            multi: true
-        }
-    ]
 })
 export class AppModule { }
