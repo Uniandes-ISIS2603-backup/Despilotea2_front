@@ -1,0 +1,22 @@
+<!-- Card -->
+<div class="card testimonial-card" *ngFor = "let a of authors">
+
+        <!-- Background color -->
+        <div class="card-up indigo lighten-1"></div>
+      
+        <!-- Avatar -->
+        <div class="avatar mx-auto white">
+          <img src={{author.image}} class="rounded-circle" alt="woman avatar">
+        </div>
+      
+        <!-- Content -->
+        <div class="card-body">
+          <!-- Name -->
+          <h4 style="cursor: pointer;" routerLink="/authors/{{author.id}}"  > <dd>{{author.name}}</h4>
+          <hr>
+          <!-- Quotation -->
+          <p><i class="fas fa-quote-left"></i> {{author.desciption}}</p>
+        </div>
+      
+      </div>
+      <!-- Card -->
