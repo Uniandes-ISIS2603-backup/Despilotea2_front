@@ -29,7 +29,7 @@ export class Book {
     /**
      * The book's publishing date
      */
-    publishingdate: any;
+    publishDate: any;
     
 
     /**

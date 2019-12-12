@@ -3,11 +3,12 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
 import {Book} from './book';
+import { BookDetail}  from './book-detail';
 
 
 import {environment} from '../../environments/environment';
 const API_URL = environment.apiURL;
-const books = '/books';
+const books = '/books/list';
 
 
 /**
@@ -28,5 +29,10 @@ export class BookService {
     */
     getBooks(): Observable<Book[]> {
         return this.http.get<Book[]>(API_URL + books);
+    }
+
+    getBooksDetails(bookId) : Observable<BookDetail>
+    {
+        return this.http.get<BookDetail>(API_URL + books + '/' + bookId);
     }
 }
