@@ -24,6 +24,8 @@ import { HomeModule } from './home/home.module';
 import { FooterComponent } from './main/footer/footer.component';
 import { NavBarComponent } from './main/nav-bar/nav-bar.component';
 import { TarifasEnvioComponent } from './tarifas-envio/tarifas-envio.component';
+import { EditorialDetailComponent} from './editorial/editorial-detail/editorial-detail.component';
+import { EditorialListComponent} from './editorial/editorial-list/editorial-list.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { TarifasEnvioComponent } from './tarifas-envio/tarifas-envio.component';
         FooterComponent,
         NavBarComponent,
         TarifasEnvioComponent,
+        EditorialListComponent,
+        EditorialDetailComponent,
     ],
     imports: [
         BrowserModule,
