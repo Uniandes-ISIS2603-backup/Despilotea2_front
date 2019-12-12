@@ -10,6 +10,9 @@ import { EditorialComponent } from './editorial/editorial.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { PrizeComponent } from './prize/prize.component';
 import { ReviewComponent } from './review/review.component';
+import { FooterComponent } from './main/footer/footer.component';
+import { NavBarComponent } from './main/nav-bar/nav-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { ReviewComponent } from './review/review.component';
     OrganizationComponent,
     PrizeComponent,
     ReviewComponent,
-    MainLayoutComponent
+    FooterComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
