@@ -28,7 +28,6 @@ import { FoodblogCreateComponent } from '../foodblog/foodblog-create/foodblog-cr
 import {ResenaListComponent} from '../resena/resena-list/resena-list.component';
 import {ResenaCreateComponent} from '../resena/resena-create/resena-create.component';
 
-
 import { HomeComponent } from '../home/home/home.component';
 import { AdministradorDetailComponent } from '../administrador/administrador-detail/administrador-detail.component';
 

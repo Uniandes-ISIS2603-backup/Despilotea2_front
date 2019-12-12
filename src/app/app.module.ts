@@ -23,6 +23,7 @@ import {ResenaModule} from './resena/resena.module';
 import { HomeModule } from './home/home.module';
 import { FooterComponent } from './main/footer/footer.component';
 import { NavBarComponent } from './main/nav-bar/nav-bar.component';
+import { TarifasEnvioComponent } from './tarifas-envio/tarifas-envio.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { NavBarComponent } from './main/nav-bar/nav-bar.component';
         AppComponent,
         FooterComponent,
         NavBarComponent,
+        TarifasEnvioComponent,
     ],
     imports: [
         BrowserModule,
