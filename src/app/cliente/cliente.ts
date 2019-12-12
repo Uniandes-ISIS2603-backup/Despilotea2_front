@@ -1,3 +1,5 @@
+import { Book } from "../book/book";
+
 export class Cliente {
 
    id:number;
@@ -22,6 +24,8 @@ export class Cliente {
 */
    cedula: string;
 
+   carritoDeCompras:Book[];
+   
    /**
 * Atributo que modela la direccion del cliente.
 */

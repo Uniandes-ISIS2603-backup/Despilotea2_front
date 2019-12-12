@@ -16,13 +16,15 @@ const clientes = '/clientes';
 @Injectable()
 export class UserService {
 
+    private administrador: Administrador;
+     private cliente: Cliente
     /**
      * Constructor of the service
      * @param router Angular's Router to redirect the user on login or logout
      * @param roleService NgxRolesService to manage authentication roles
      * @param permissionsService NgxPermissionsService to manage authentication permissions
      */
-    constructor(private administrador: Administrador, private cliente: Cliente, private clienteService: ClienteService, private router: Router, private roleService: NgxRolesService, private permissionsService: NgxPermissionsService, private http: HttpClient) { }
+    constructor( private clienteService: ClienteService, private router: Router, private roleService: NgxRolesService, private permissionsService: NgxPermissionsService, private http: HttpClient) { }
 
     start(): void {
         this.permissionsService.flushPermissions();
@@ -33,10 +35,8 @@ export class UserService {
             this.setGuestRole();
         } else if (role === 'ADMIN') {
             this.setAdministratorRole();
-        } else if (role === 'VEND') {
-            this.setAdministratorRole();
-        }
-        else {
+        } 
+        else if (role==='CLIENT'){
             this.setClientRole();
         }
     }
@@ -56,16 +56,18 @@ export class UserService {
         return this.http.post<Cliente>(API_URL + clientes, cliente);
     }
 
+    getCliente(clienteId): Observable<Cliente> {
+        return this.http.get<Cliente>(API_URL + clientes+'/'+clienteId);
+    }
+
     setAdministratorRole(): void {
         this.roleService.flushRoles();
         this.roleService.addRole('ADMIN', ['edit_author_permission', 'delete_author_permission']);
         localStorage.setItem('role', 'ADMIN');
     }
 
-    setVendedorRole(): void {
-        this.roleService.flushRoles();
-        this.roleService.addRole('VEND', ['edit_author_permission', 'delete_author_permission']);
-        localStorage.setItem('role', 'VEND');
+    put(cliente):void{
+        this.http.put<Cliente>(API_URL+clientes,cliente);
     }
 
     printRole(): void {
@@ -85,7 +87,7 @@ export class UserService {
             
                 this.setClientRole()
             }
-        this.router.navigateByUrl('/dispositivos/all');
+        this.router.navigateByUrl('/books/list');
     }
 
     /**

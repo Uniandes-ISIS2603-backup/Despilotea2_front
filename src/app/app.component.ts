@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from './user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'maratones';
+
+  constructor(private userService:UserService)
+{
+  
+}
+  ngOnInit():void
+  {
+    this.userService.start();
+    
+  }
+
+  logout():void{
+    this.userService.logout();
+    }
 }

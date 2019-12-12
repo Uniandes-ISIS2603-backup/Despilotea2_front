@@ -1,32 +1,46 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-    <a class="navbar-brand" href="#">BookStore</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href='/home' >Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/books" >Libros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/authors" >Autores</a>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link" href="/editorials" >Editoriales</a>
-        </li>  
-      </ul>
+  <a class="navbar-brand" href="#">BookStore</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        <div>
-               
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
 
-         <button type="button" class="btn btn-outline-dark mr-3"  >Ver carrito</button>
-          <button type="button" class="btn btn-outline-dark mr-3" href="/login">Inicia sesión</button>
-          <button type="button" class="btn btn-outline-dark" href="/signup">Crear cuenta</button>
-        </div>
-    </div>
-  </nav>
+        <a class="nav-link" href='/home'>Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+
+        <a class="nav-link" href='/authors/list'>Autores <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+
+        <a class="nav-link" href='/books/list'>Libros <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+
+    <a href="carrito">
+    <button type="button" *ngxPermissionsOnly="['GUEST']" class="btn btn-outline-dark mr-3">Ver carrito</button>
+  </a>
+    <a href="user/login">
+      <button type="button" *ngxPermissionsOnly="['GUEST']" class="btn btn-outline-dark mr-3">Inicia sesión</button>
+    </a>
+    <a href="user/signup">
+      <button type="button"*ngxPermissionsOnly="['GUEST']" class="btn btn-outline-dark">Crear cuenta</button>
+    </a>
+    <a href="carrito">
+    <button type="button" class="btn btn-outline-dark mr-3" (click)=getUserInformation()
+      *ngxPermissionsOnly="['CLIENT']">Ver carrito compras</button>
+    </a>
+    <button type="button" class="btn btn-outline-dark mr-3" (click)=getUserInformation()
+      *ngxPermissionsOnly="['CLIENT']">Mi cuenta</button>
+    <button type="button" class="btn btn-outline-dark mr-3" (click)=logout() *ngxPermissionsOnly="['CLIENT']">Cerrar
+      sesión</button>
+    <img src="https://img.icons8.com/ios-filled/50/000000/name.png">
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

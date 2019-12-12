@@ -20,7 +20,7 @@ export class UserLoginComponent implements OnInit {
     */
     constructor(
         private userService: UserService,
-        private toastrService: ToastrService,
+        private toastrService: ToastrService
     ) { }
 
     user: User;
@@ -40,7 +40,7 @@ export class UserLoginComponent implements OnInit {
     */
     ngOnInit() {
         this.user = new User();
-        this.roles = ['VEND', 'ADMIN', 'CLIENT'];
+        this.roles = ['ADMIN', 'CLIENT'];
     }
 
 }
