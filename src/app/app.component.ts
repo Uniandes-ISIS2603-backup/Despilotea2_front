@@ -19,7 +19,7 @@ export class AppComponent {
     
   }
 
-  logout():id{
+  logout():void{
     this.userService.logout();
     }
 }
