@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {APP_BASE_HREF} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
@@ -42,4 +43,30 @@ describe('EditorialDetailComponent', () => {
         fixture.detectChanges();
     });
     
+=======
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { EditorialDetailComponent } from './editorial-detail.component';
+
+describe('EditorialDetailComponent', () => {
+  let component: EditorialDetailComponent;
+  let fixture: ComponentFixture<EditorialDetailComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ EditorialDetailComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(EditorialDetailComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+>>>>>>> 9fb5411e535675b275d70ced890237bf0452f6e2
 });

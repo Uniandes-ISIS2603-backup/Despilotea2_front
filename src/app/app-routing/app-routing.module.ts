@@ -2,16 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxPermissionsGuard } from 'ngx-permissions';
-
 import { UserLoginComponent } from '../user/user-login/user-login.component';
 import { UserSignUpComponent } from '../user/user-sign-up/user-sign-up.component';
 import { ClienteListComponent } from '../cliente/cliente-list/cliente-list.component';
 import { NotFoundComponent } from '../notFound/notFound/notfound.component';
 import { BookListComponent } from '../book/book-list/book-list.component';
 import { AuhtorComponent } from '../author/auhtor.component';
+
 import { HomeComponent } from '../home/home/home.component';
 
+
 const routes: Routes = [
+
+   
     {
         path: 'user',
         children: [

@@ -77,6 +77,7 @@ export class EditorialListComponent implements OnInit {
             this.showEdit = false;
         }
     }
+<<<<<<< HEAD
 
     updateEditorial(): void {
         this.showEdit = false;
@@ -111,6 +112,8 @@ export class EditorialListComponent implements OnInit {
 
 
 
+=======
+>>>>>>> 9fb5411e535675b275d70ced890237bf0452f6e2
     /**
     * This will initialize the component by retrieving the list of editorials from the service
     * This method will be called when the component is created

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { ActivatedRoute } from '@angular/router';
 
 import { EditorialService } from '../editorial.service';
@@ -54,5 +55,19 @@ export class EditorialDetailComponent implements OnInit {
         this.editorialDetail = new EditorialDetail();
         this.getEditorialDetail();
     }
+=======
+
+@Component({
+  selector: 'app-editorial-detail',
+  templateUrl: './editorial-detail.component.html',
+  styleUrls: ['./editorial-detail.component.css']
+})
+export class EditorialDetailComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+>>>>>>> 9fb5411e535675b275d70ced890237bf0452f6e2
 
 }

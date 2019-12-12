@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {AppRoutingModule} from '../../app-routing/app-routing.module';
 import { APP_BASE_HREF } from '@angular/common';
@@ -45,3 +46,30 @@ describe('EditorialComponent', () => {
     });
 
 });
+=======
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { EditorialListComponent } from './editorial-list.component';
+
+describe('EditorialListComponent', () => {
+  let component: EditorialListComponent;
+  let fixture: ComponentFixture<EditorialListComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ EditorialListComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(EditorialListComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+>>>>>>> 9fb5411e535675b275d70ced890237bf0452f6e2

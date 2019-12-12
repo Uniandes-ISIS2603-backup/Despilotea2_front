@@ -5,6 +5,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { ModalDialogModule } from 'ngx-modal-dialog';
@@ -63,5 +64,38 @@ import { BookListComponent } from './book/book-list/book-list.component';
   ],
   providers: [],
   bootstrap: [AppComponent]
+
+
+@NgModule({
+    declarations: [
+        AppComponent,
+        FooterComponent,
+        NavBarComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        ModalDialogModule.forRoot(),
+        FormsModule,
+        ToastrModule.forRoot({
+            timeOut: 10000,
+            positionClass: 'toast-bottom-right',
+            preventDuplicates: true,
+        }),
+        NgxPaginationModule,
+        NgxPermissionsModule.forRoot(),
+        NgbModule,
+        ClienteModule,
+    ],
+    bootstrap: [AppComponent],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: HttpErrorInterceptor,
+            multi: true
+        }
+    ]
 })
 export class AppModule { }
