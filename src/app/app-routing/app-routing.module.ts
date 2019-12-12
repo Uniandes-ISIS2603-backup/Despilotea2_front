@@ -44,7 +44,17 @@ const routes: Routes = [
     },
     {
         path: 'books',
-        component: BookListComponent,
+        children: [
+            {
+                path: 'list',
+                component: BookListComponent,
+            },
+            {
+                path: ':id',
+                component: AuthorDetailComponent,
+                runGuardsAndResolvers: 'always'
+            }
+        ]
     },
     {
         path: 'authors',
