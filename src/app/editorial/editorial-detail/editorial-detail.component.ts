@@ -52,5 +52,5 @@ export class EditorialDetailComponent implements OnInit {
         this.editorial_id = +this.route.snapshot.paramMap.get('id');
         this.editorialDetail = new EditorialDetail();
         this.getEditorialDetail();
-    }
+        }
 }

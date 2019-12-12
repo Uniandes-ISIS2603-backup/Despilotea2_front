@@ -22,9 +22,6 @@ import { UserModule } from './user/user.module';
 import { BookModule } from './book/book.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { NotFoundModule } from './notFound/notFound.module';
-import { UserLoginComponent } from './user/user-login/user-login.component';
-import { NotFoundComponent } from './notFound/notFound/notfound.component';
-import { BookListComponent } from './book/book-list/book-list.component';
 import {AuthorListComponent} from './author/author-list/author-list.component';
 import {AuthorDetailComponent} from './author/author-detail/author-detail.component';
 import { HomeModule } from './home/home.module';
@@ -68,7 +65,13 @@ import { EditorialModule } from './editorial/editorial.module';
     NgbModule,
     HomeModule
   ],
-  providers: [],
+  providers: [
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: HttpErrorInterceptor,
+        multi: true
+    }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

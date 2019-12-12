@@ -27,18 +27,21 @@
     </ul>
 
     <button type="button" class="btn btn-outline-dark mr-3">Ver carrito</button>
-    <a routerLink="user/login">
+
+    <a href="user/login">
       <button type="button" class="btn btn-outline-dark mr-3">Inicia sesión</button>
     </a>
-    <button type="button" class="btn btn-outline-dark" href="#" routerLink='user/signup'>Crear cuenta</button>
-
-    <div *ngxPermissionsOnly="['CLIENT']">
-      <button type="button" class="btn btn-outline-dark mr-3" (click)=getUserInformation()>Ver carrito compras</button>
-      <button type="button" class="btn btn-outline-dark mr-3" (click)=getUserInformation()>Mi cuenta</button>
-      <button type="button" class="btn btn-outline-dark mr-3" (click)=logout()>Cerrar sesión</button>
-      <img src="https://img.icons8.com/ios-filled/50/000000/name.png">
-    </div>
-
+    <a href="user/signup">
+      <button type="button" class="btn btn-outline-dark" href="#" routerLink='user/signup'>Crear cuenta</button>
+    </a>
+    
+    <button type="button" class="btn btn-outline-dark mr-3" (click)=getUserInformation()
+      *ngxPermissionsOnly="['CLIENT']">Ver carrito compras</button>
+    <button type="button" class="btn btn-outline-dark mr-3" (click)=getUserInformation()
+      *ngxPermissionsOnly="['CLIENT']">Mi cuenta</button>
+    <button type="button" class="btn btn-outline-dark mr-3" (click)=logout() *ngxPermissionsOnly="['CLIENT']">Cerrar
+      sesión</button>
+    <img src="https://img.icons8.com/ios-filled/50/000000/name.png">
   </div>
 </nav>
 

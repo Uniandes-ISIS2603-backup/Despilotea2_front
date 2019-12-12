@@ -3,7 +3,6 @@ import { HttpClient } from "@angular/common/http";
 import { Cliente } from "./cliente";
 import { Observable } from "rxjs";
 import { environment } from '../../environments/environment';
-import { Administrador } from './administrador';
 
 const API_URL = environment.apiURL;
 const clientes = "/clientes";
@@ -21,10 +20,6 @@ export class ClienteService {
     return this.http.get<Cliente>(API_URL +clientes+'/user/'+clienteUser);
   }
 
-  getAdministrador(idAdmin):Observable<Administrador>
-  {
-    return this.http.get<Administrador>(API_URL +'/administradores/'+idAdmin);
-  }
       /**
     * Creates an author
     * @param author The new author

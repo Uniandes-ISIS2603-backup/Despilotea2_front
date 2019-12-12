@@ -8,15 +8,15 @@ import { ClienteListComponent } from '../cliente/cliente-list/cliente-list.compo
 import { NotFoundComponent } from '../notFound/notFound/notfound.component';
 import { BookListComponent } from '../book/book-list/book-list.component';
 import { AuhtorComponent } from '../author/auhtor.component';
-import {AuthorListComponent} from '../author/author-list/author-list.component';
-import {AuthorDetailComponent} from '../author/author-detail/author-detail.component';
+import { AuthorListComponent } from '../author/author-list/author-list.component';
+import { AuthorDetailComponent } from '../author/author-detail/author-detail.component';
 
 import { HomeComponent } from '../home/home/home.component';
 import { EditorialListComponent } from '../editorial/editorial-list/editorial-list.component';
 
 
 const routes: Routes = [
- 
+
     {
         path: 'user',
         children: [
@@ -61,8 +61,12 @@ const routes: Routes = [
         ]
     },
     {
-        path:'home',
-        component:HomeComponent
+        path: 'home',
+        component: HomeComponent
+    },
+    {
+        path: 'editorials',
+        component: EditorialListComponent
     },
     {
         path: '',
@@ -72,10 +76,6 @@ const routes: Routes = [
     {
         path: '**',
         component: NotFoundComponent,
-    },
-    {
-        path:'editorials',
-        component:EditorialListComponent
     }
 ];
 
