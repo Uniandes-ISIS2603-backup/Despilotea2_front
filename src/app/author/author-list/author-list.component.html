@@ -1,24 +1,25 @@
 <!-- Card -->
+
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2" *ngFor = "let author of authors">
-<div class="card testimonial-card">
+        <div  *ngFor = "let author of authors">
+<div class="card testimonial-card container-fluid" style="width: 18rem;">
 
         <!-- Background color -->
         <div class="card-up indigo lighten-1"></div>
       
         <!-- Avatar -->
         <div class="avatar mx-auto white">
-          <img src={{author.image}} class="rounded-circle" alt="woman avatar">
+          <img src={{author.image}} class="rounded-circle" height="100" width="100" alt="woman avatar">
         </div>
       
         <!-- Content -->
-        <div class="card-body">
+        <div class="card-body container-fluid">
           <!-- Name -->
           <h4 style="cursor: pointer;" routerLink="/authors/{{author.id}}"  > <dd>{{author.name}}</h4>
           <hr>
           <!-- Quotation -->
-          <p><i class="fas fa-quote-left"></i> {{author.desciption}}</p>
+          <p > {{author.desciption}}</p>
         </div>
       
       </div>
