@@ -1,8 +1,15 @@
 <!-- Card -->
 
+
+<div class="col">
+  <input  type="text" class="form-control" [(ngModel)]="searchText" placeholder="Buscar por nombre">
+</div>
 <div class="container-fluid">
+
+<br>  
+
     <div class="row">
-        <div  *ngFor = "let author of authors">
+        <div  *ngFor = "let author of authors  | filter : searchText">
 <div class="card testimonial-card container-fluid" style="width: 18rem;">
 
         <!-- Background color -->
