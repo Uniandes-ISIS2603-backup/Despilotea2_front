@@ -1,6 +1,11 @@
 <div class="container-fluid">
+  <div class="col">
+    <input  type="text" class="form-control" [(ngModel)]="searchText" placeholder="Buscar por nombre">
+</div>
+<br>
     <div class="row">
-        <div class="col-md-2" *ngFor = "let book of books">
+      
+        <div class="col-md-2" *ngFor = "let book of books | filter : searchText">
 
             <!-- Card -->
 <div class="card">
